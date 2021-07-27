@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "get employees",
+			"name": "get",
 			"request": {
 				"auth": {
 					"type": "noauth"
