@@ -1,99 +1,18 @@
 {
-	"id": "d6e83574-4669-4698-8f13-7ac463a30745",
+	"id": "b0b84b9e-1e0d-4e81-a0de-52a18304c9f1",
 	"name": "employee collection",
-	"timestamp": "2021-07-28T14:36:33.535Z",
-	"collection_id": "0-c73bc1da-6176-408f-8162-0e825d0cafda",
+	"timestamp": "2021-07-28T16:59:31.526Z",
+	"collection_id": "0-d7f6a140-9ce6-414b-902b-ad6f5fed7144",
 	"folder_id": 0,
 	"environment_id": "3603330c-1c92-4e9a-ae00-e91c366ca99a",
-	"totalPass": 11,
+	"totalPass": 8,
 	"totalFail": 0,
 	"results": [
 		{
-			"id": "79c95cde-ad58-4116-b97b-a4009a7bbc90",
-			"name": "new jobdescription",
-			"url": "http://localhost:8888/jobdescriptions",
-			"time": 41,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				41
-			],
-			"allTests": [
-				{
-					"Status code is 200": true
-				}
-			]
-		},
-		{
-			"id": "fa77d149-feba-4a75-9395-d4572e61216b",
-			"name": "jobdescritions",
-			"url": "http://localhost:8888/jobdescriptions",
-			"time": 29,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				29
-			],
-			"allTests": [
-				{
-					"Status code is 200": true
-				}
-			]
-		},
-		{
-			"id": "7f9d76c0-2fa0-4fcc-bd41-85bc398d78ef",
-			"name": "jobdescription/{id}",
-			"url": "http://localhost:8888/jobdescriptions/13",
-			"time": 16,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				16
-			],
-			"allTests": [
-				{
-					"Status code is 200": true
-				}
-			]
-		},
-		{
-			"id": "a26765e7-7d79-4309-ab8f-096f03cdbd0c",
+			"id": "2aab45e8-44bc-49c3-bdf7-b043ff7d9938",
 			"name": "new employee",
 			"url": "http://localhost:8888/employees",
-			"time": 43,
+			"time": 50,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -108,7 +27,7 @@
 				}
 			},
 			"times": [
-				43
+				50
 			],
 			"allTests": [
 				{
@@ -117,10 +36,10 @@
 			]
 		},
 		{
-			"id": "4e8410ab-1479-4a01-b765-e216788e1a06",
+			"id": "2df2b839-4c24-4dfb-9563-2711b3963084",
 			"name": "employees",
 			"url": "http://localhost:8888/employees",
-			"time": 26,
+			"time": 20,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -135,7 +54,7 @@
 				}
 			},
 			"times": [
-				26
+				20
 			],
 			"allTests": [
 				{
@@ -144,96 +63,9 @@
 			]
 		},
 		{
-			"id": "81f8cb5b-ac3f-4b4d-b2fb-faa0d9ac5c55",
+			"id": "5eb4adf2-3d6a-4250-88f3-40ffe82e7bf5",
 			"name": "employee/{id}",
-			"url": "http://localhost:8888/employees/7",
-			"time": 26,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				26
-			],
-			"allTests": [
-				{
-					"Status code is 200": true
-				}
-			]
-		},
-		{
-			"id": "f75c44eb-156d-4349-81ed-b6634644e576",
-			"name": "employee/{id}",
-			"url": "http://localhost:8888/employees/7",
-			"time": 32,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				32
-			],
-			"allTests": [
-				{
-					"Status code is 200": true
-				}
-			]
-		},
-		{
-			"id": "185fe40d-939d-49bb-a651-d1fcf470bd33",
-			"name": "employee/{id}",
-			"url": "http://localhost:8888/employees/7",
-			"time": 16,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true,
-				"Middlename change check": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				},
-				"Middlename change check": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				16
-			],
-			"allTests": [
-				{
-					"Status code is 200": true,
-					"Middlename change check": true
-				}
-			]
-		},
-		{
-			"id": "b2e5a0c5-025d-4ee0-8e52-e93bb411e224",
-			"name": "http://localhost:8888/employees​/{{employee_id}}",
-			"url": "http://localhost:8888/employees/7",
+			"url": "http://localhost:8888/employees/16",
 			"time": 22,
 			"responseCode": {
 				"code": 200,
@@ -258,10 +90,97 @@
 			]
 		},
 		{
-			"id": "a2f2b30d-dc4b-4e9f-b92c-8ddc826ccb35",
+			"id": "390fb147-7e6a-44a9-bcf0-d884d835e814",
 			"name": "employee/{id}",
-			"url": "http://localhost:8888/employees/7",
-			"time": 36,
+			"url": "http://localhost:8888/employees/16",
+			"time": 37,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Middlename change check": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Middlename change check": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				37
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Middlename change check": true
+				}
+			]
+		},
+		{
+			"id": "e20fa71e-ba19-415e-9501-ee93d24a9a40",
+			"name": "employee/{id}",
+			"url": "http://localhost:8888/employees/16",
+			"time": 23,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				23
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "ea952b04-d5cf-402d-a79e-67816f140864",
+			"name": "employee/{id}",
+			"url": "http://localhost:8888/employees/16",
+			"time": 32,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				32
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "a2679a40-2e5d-4ede-8b4d-77179b266dc1",
+			"name": "employee/{id}",
+			"url": "http://localhost:8888/employees/16",
+			"time": 65,
 			"responseCode": {
 				"code": 500,
 				"name": "Internal Server Error"
@@ -276,7 +195,7 @@
 				}
 			},
 			"times": [
-				36
+				65
 			],
 			"allTests": [
 				{
@@ -286,47 +205,35 @@
 		}
 	],
 	"count": 1,
-	"totalTime": 287,
+	"totalTime": 249,
 	"collection": {
 		"requests": [
 			{
-				"id": "79c95cde-ad58-4116-b97b-a4009a7bbc90",
+				"id": "2aab45e8-44bc-49c3-bdf7-b043ff7d9938",
 				"method": "POST"
 			},
 			{
-				"id": "fa77d149-feba-4a75-9395-d4572e61216b",
+				"id": "2df2b839-4c24-4dfb-9563-2711b3963084",
 				"method": "GET"
 			},
 			{
-				"id": "7f9d76c0-2fa0-4fcc-bd41-85bc398d78ef",
+				"id": "5eb4adf2-3d6a-4250-88f3-40ffe82e7bf5",
 				"method": "GET"
 			},
 			{
-				"id": "a26765e7-7d79-4309-ab8f-096f03cdbd0c",
-				"method": "POST"
-			},
-			{
-				"id": "4e8410ab-1479-4a01-b765-e216788e1a06",
-				"method": "GET"
-			},
-			{
-				"id": "81f8cb5b-ac3f-4b4d-b2fb-faa0d9ac5c55",
-				"method": "GET"
-			},
-			{
-				"id": "f75c44eb-156d-4349-81ed-b6634644e576",
+				"id": "390fb147-7e6a-44a9-bcf0-d884d835e814",
 				"method": "PUT"
 			},
 			{
-				"id": "185fe40d-939d-49bb-a651-d1fcf470bd33",
+				"id": "e20fa71e-ba19-415e-9501-ee93d24a9a40",
 				"method": "GET"
 			},
 			{
-				"id": "b2e5a0c5-025d-4ee0-8e52-e93bb411e224",
+				"id": "ea952b04-d5cf-402d-a79e-67816f140864",
 				"method": "DELETE"
 			},
 			{
-				"id": "a2f2b30d-dc4b-4e9f-b92c-8ddc826ccb35",
+				"id": "a2679a40-2e5d-4ede-8b4d-77179b266dc1",
 				"method": "GET"
 			}
 		]

@@ -1,427 +1,10 @@
 {
 	"info": {
-		"_postman_id": "c73bc1da-6176-408f-8162-0e825d0cafda",
+		"_postman_id": "d7f6a140-9ce6-414b-902b-ad6f5fed7144",
 		"name": "employee collection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
-		{
-			"name": "new jobdescription",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var jsonData = pm.response.json();\r",
-							"pm.environment.set(\"job_description_id\", jsonData.id);\r",
-							"\r",
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"\r",
-							"\r",
-							"\r",
-							"\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"{{$randomAbbreviation}}\",\r\n    \"description\": \"{{$randomAbbreviation}}\",\r\n    \"addedAt\": \"{{$isoTimestamp}}\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8888/jobdescriptions",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8888",
-					"path": [
-						"jobdescriptions"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "400 Bad Request",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"title\": \"{{$randomAbbreviation}}\",\r\n  \"description\": \"{{$randomAbbreviation}}\",\r\n  \"addedAt\": \"{{$isoTimestamp}}\"\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8888/jobdescriptions",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8888",
-							"path": [
-								"jobdescriptions"
-							]
-						}
-					},
-					"status": "Bad Request",
-					"code": 400,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate"
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache"
-						},
-						{
-							"key": "Expires",
-							"value": "0"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 28 Jul 2021 10:53:14 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"timestamp\": \"2021-07-28T10:53:14.704+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"path\": \"/jobdescriptions\"\n}"
-				},
-				{
-					"name": "200 OK",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"{{$randomAbbreviation}}\",\r\n    \"description\": \"{{$randomAbbreviation}}\",\r\n    \"addedAt\": \"{{$isoTimestamp}}\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8888/jobdescriptions",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8888",
-							"path": [
-								"jobdescriptions"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate"
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache"
-						},
-						{
-							"key": "Expires",
-							"value": "0"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 28 Jul 2021 11:00:39 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"title\": \"SMS\",\n    \"description\": \"AI\",\n    \"addedAt\": \"2021-07-28T11:00:39.182\",\n    \"id\": 3\n}"
-				}
-			]
-		},
-		{
-			"name": "jobdescritions",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8888/jobdescriptions",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8888",
-					"path": [
-						"jobdescriptions"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "200 OK",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8888/jobdescriptions",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8888",
-							"path": [
-								"jobdescriptions"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate"
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache"
-						},
-						{
-							"key": "Expires",
-							"value": "0"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 28 Jul 2021 11:33:05 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"title\": \"FTP\",\n        \"description\": \"PCI\",\n        \"addedAt\": \"2021-07-28T10:50:31.23\",\n        \"id\": 1\n    },\n    {\n        \"title\": \"USB\",\n        \"description\": \"\",\n        \"addedAt\": \"2021-07-28T10:52:19.119\",\n        \"id\": 2\n    },\n    {\n        \"title\": \"SMS\",\n        \"description\": \"AI\",\n        \"addedAt\": \"2021-07-28T11:00:39.182\",\n        \"id\": 3\n    },\n    {\n        \"title\": \"USB\",\n        \"description\": \"USB\",\n        \"addedAt\": \"2021-07-28T11:13:05.906\",\n        \"id\": 4\n    },\n    {\n        \"title\": \"USB\",\n        \"description\": \"FTP\",\n        \"addedAt\": \"2021-07-28T11:22:42.499\",\n        \"id\": 5\n    },\n    {\n        \"title\": \"EXE\",\n        \"description\": \"IB\",\n        \"addedAt\": \"2021-07-28T11:24:47.358\",\n        \"id\": 6\n    }\n]"
-				}
-			]
-		},
-		{
-			"name": "jobdescription/{id}",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8888/jobdescriptions/{{job_description_id}}",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8888",
-					"path": [
-						"jobdescriptions",
-						"{{job_description_id}}"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "200 OK",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8888/jobdescriptions/6",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8888",
-							"path": [
-								"jobdescriptions",
-								"6"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate"
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache"
-						},
-						{
-							"key": "Expires",
-							"value": "0"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 28 Jul 2021 12:00:04 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"title\": \"EXE\",\n    \"description\": \"IB\",\n    \"addedAt\": \"2021-07-28T11:24:47.358\",\n    \"id\": 6\n}"
-				}
-			]
-		},
 		{
 			"name": "new employee",
 			"event": [
@@ -453,7 +36,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userName\": \"{{$randomFirstName}}\",\r\n    \"jobDescriptionId\": {{job_description_id}},\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"middleName\": \"-\",\r\n    \"emailId\": \"{{$randomFirstName}}@tester.com\",\r\n    \"dayOfBirth\": \"2000-07-28\"\r\n}",
+					"raw": "{\r\n    \"userName\": \"{{emp_userName}}\",\r\n    \"jobDescriptionId\": {{job_description_id}},\r\n    \"firstName\": \"{{emp_firstName}}\",\r\n    \"lastName\": \"{{emp_lastName}}\",\r\n    \"middleName\": \"{{emp_middleName}}\",\r\n    \"emailId\": \"{{emp_emailId}}@tester.com\",\r\n    \"dayOfBirth\": \"{{emp_dayOfBirth}}\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -461,171 +44,16 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8888/employees",
-					"protocol": "http",
+					"raw": "{{emp_url}}/employees",
 					"host": [
-						"localhost"
+						"{{emp_url}}"
 					],
-					"port": "8888",
 					"path": [
 						"employees"
 					]
 				}
 			},
-			"response": [
-				{
-					"name": "200 OK",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"userName\": \"{{$randomFirstName}}\",\r\n    \"jobDescriptionId\": {{job_description_id}},\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"middleName\": \"-\",\r\n    \"emailId\": \"{{$randomFirstName}}@tester.com\",\r\n    \"dayOfBirth\": \"2000-07-28\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8888/employees",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8888",
-							"path": [
-								"employees"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate"
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache"
-						},
-						{
-							"key": "Expires",
-							"value": "0"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 28 Jul 2021 11:24:54 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"id\": 1,\n    \"jobDescription\": {\n        \"title\": \"EXE\",\n        \"description\": \"IB\",\n        \"addedAt\": \"2021-07-28T11:24:47.358\",\n        \"id\": 6\n    },\n    \"userName\": \"Brayan\",\n    \"firstName\": \"Lucas\",\n    \"middleName\": \"-\",\n    \"lastName\": \"Kunde\",\n    \"emailId\": \"Kaelyn@tester.com\",\n    \"dayOfBirth\": \"2000-07-28\"\n}"
-				},
-				{
-					"name": "400 Bad request",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"userName\": \"{{$randomFirstName}}\",\r\n    \"jobDescriptionId\": {{job_description_id}},\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"middleName\": \"-\",\r\n    \"emailId\": \"{{$randomFirstName}}@tester.com\",\r\n    \"dayOfBirth\": \"2000-07-28\"\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8888/employees",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8888",
-							"path": [
-								"employees"
-							]
-						}
-					},
-					"status": "Bad Request",
-					"code": 400,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate"
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache"
-						},
-						{
-							"key": "Expires",
-							"value": "0"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 28 Jul 2021 11:26:02 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"timestamp\": \"2021-07-28T11:26:02.052+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"path\": \"/employees\"\n}"
-				}
-			]
+			"response": []
 		},
 		{
 			"name": "employees",
@@ -648,88 +76,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8888/employees",
-					"protocol": "http",
+					"raw": "{{emp_url}}/employees",
 					"host": [
-						"localhost"
+						"{{emp_url}}"
 					],
-					"port": "8888",
 					"path": [
 						"employees"
 					]
 				}
 			},
-			"response": [
-				{
-					"name": "200 OK",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8888/employees",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8888",
-							"path": [
-								"employees"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate"
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache"
-						},
-						{
-							"key": "Expires",
-							"value": "0"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 28 Jul 2021 11:29:00 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"id\": 1,\n        \"jobDescription\": {\n            \"title\": \"EXE\",\n            \"description\": \"IB\",\n            \"addedAt\": \"2021-07-28T11:24:47.358\",\n            \"id\": 6\n        },\n        \"userName\": \"Brayan\",\n        \"firstName\": \"Lucas\",\n        \"middleName\": \"-\",\n        \"lastName\": \"Kunde\",\n        \"emailId\": \"Kaelyn@tester.com\",\n        \"dayOfBirth\": \"2000-07-28\"\n    },\n    {\n        \"id\": 2,\n        \"jobDescription\": {\n            \"title\": \"EXE\",\n            \"description\": \"IB\",\n            \"addedAt\": \"2021-07-28T11:24:47.358\",\n            \"id\": 6\n        },\n        \"userName\": \"Sandy\",\n        \"firstName\": \"Vincenzo\",\n        \"middleName\": \"-\",\n        \"lastName\": \"Satterfield\",\n        \"emailId\": \"@tester.com\",\n        \"dayOfBirth\": \"2000-07-28\"\n    },\n    {\n        \"id\": 3,\n        \"jobDescription\": {\n            \"title\": \"EXE\",\n            \"description\": \"IB\",\n            \"addedAt\": \"2021-07-28T11:24:47.358\",\n            \"id\": 6\n        },\n        \"userName\": \"Herta\",\n        \"firstName\": \"Guy\",\n        \"middleName\": \"-\",\n        \"lastName\": \"Stamm\",\n        \"emailId\": \"\",\n        \"dayOfBirth\": \"2000-07-28\"\n    }\n]"
-				}
-			]
+			"response": []
 		},
 		{
 			"name": "employee/{id}",
@@ -751,212 +107,17 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8888/employees/{{employee_id}}",
-					"protocol": "http",
+					"raw": "{{emp_url}}/employees/{{employee_id}}",
 					"host": [
-						"localhost"
+						"{{emp_url}}"
 					],
-					"port": "8888",
 					"path": [
 						"employees",
 						"{{employee_id}}"
 					]
 				}
 			},
-			"response": [
-				{
-					"name": "200 OK",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8888/employees/2",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8888",
-							"path": [
-								"employees",
-								"2"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate"
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache"
-						},
-						{
-							"key": "Expires",
-							"value": "0"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 28 Jul 2021 11:56:16 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"id\": 2,\n    \"jobDescription\": {\n        \"title\": \"EXE\",\n        \"description\": \"IB\",\n        \"addedAt\": \"2021-07-28T11:24:47.358\",\n        \"id\": 6\n    },\n    \"userName\": \"Sandy\",\n    \"firstName\": \"Vincenzo\",\n    \"middleName\": \"-\",\n    \"lastName\": \"Satterfield\",\n    \"emailId\": \"@tester.com\",\n    \"dayOfBirth\": \"2000-07-28\"\n}"
-				}
-			]
-		},
-		{
-			"name": "employee/{id}",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"id\": {{employee_id}},\r\n    \"jobDescriptionId\": {{job_description_id}},\r\n    \"userName\": \"Mustafa\",\r\n    \"firstName\": \"Charlie\",\r\n    \"middleName\": \"Rashid\",\r\n    \"lastName\": \"Windler\",\r\n    \"emailId\": \"Emelie@tester.com\",\r\n    \"dayOfBirth\": \"2000-07-28\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8888/employees/{{employee_id}}",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8888",
-					"path": [
-						"employees",
-						"{{employee_id}}"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "200 OK",
-					"originalRequest": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": {{employee_id}},\r\n    \"jobDescriptionId\": {{job_description_id}},\r\n    \"userName\": \"Mustafa\",\r\n    \"firstName\": \"Charlie\",\r\n    \"middleName\": \"Rashid\",\r\n    \"lastName\": \"Windler\",\r\n    \"emailId\": \"Emelie@tester.com\",\r\n    \"dayOfBirth\": \"2000-07-28\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8888/employees/{{employee_id}}",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8888",
-							"path": [
-								"employees",
-								"{{employee_id}}"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate"
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache"
-						},
-						{
-							"key": "Expires",
-							"value": "0"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 28 Jul 2021 14:09:21 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"id\": 5,\n    \"jobDescription\": {\n        \"title\": \"HTTP\",\n        \"description\": \"XSS\",\n        \"addedAt\": \"2021-07-28T13:57:16.706\",\n        \"id\": 11\n    },\n    \"userName\": \"Mustafa\",\n    \"firstName\": \"Charlie\",\n    \"middleName\": \"Rashid\",\n    \"lastName\": \"Windler\",\n    \"emailId\": \"Emelie@tester.com\",\n    \"dayOfBirth\": \"2000-07-28\"\n}"
-				}
-			]
+			"response": []
 		},
 		{
 			"name": "employee/{id}",
@@ -972,7 +133,49 @@
 							"pm.test(\"Middlename change check\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.middleName).to.eql(\"Rashid\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": {{employee_id}},\r\n    \"jobDescriptionId\": {{job_description_id}},\r\n    \"userName\": \"{{emp_lastName}}\",\r\n    \"firstName\": \"{{emp_firstName}}\",\r\n    \"middleName\": \"Rashid\",\r\n    \"lastName\": \"{{emp_lastName}}\",\r\n    \"emailId\": \"{{emp_emailId}}\",\r\n    \"dayOfBirth\": \"{{$isoTimestamp}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{emp_url}}/employees/{{employee_id}}",
+					"host": [
+						"{{emp_url}}"
+					],
+					"path": [
+						"employees",
+						"{{employee_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "employee/{id}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
 							"});\r",
+							"\r",
+							"\r",
 							""
 						],
 						"type": "text/javascript"
@@ -983,12 +186,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8888/employees/{{employee_id}}",
-					"protocol": "http",
+					"raw": "{{emp_url}}/employees/{{employee_id}}",
 					"host": [
-						"localhost"
+						"{{emp_url}}"
 					],
-					"port": "8888",
 					"path": [
 						"employees",
 						"{{employee_id}}"
@@ -998,7 +199,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8888/employees​/{{employee_id}}",
+			"name": "employee/{id}",
 			"event": [
 				{
 					"listen": "test",
@@ -1017,86 +218,17 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8888/employees/{{employee_id}}",
-					"protocol": "http",
+					"raw": "{{emp_url}}/employees/{{employee_id}}",
 					"host": [
-						"localhost"
+						"{{emp_url}}"
 					],
-					"port": "8888",
 					"path": [
 						"employees",
 						"{{employee_id}}"
 					]
 				}
 			},
-			"response": [
-				{
-					"name": "200 OK",
-					"originalRequest": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8888/employees/{{employee_id}}",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8888",
-							"path": [
-								"employees",
-								"{{employee_id}}"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "plain",
-					"header": [
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate"
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache"
-						},
-						{
-							"key": "Expires",
-							"value": "0"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Length",
-							"value": "0"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 28 Jul 2021 12:55:40 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": null
-				}
-			]
+			"response": []
 		},
 		{
 			"name": "employee/{id}",
@@ -1117,86 +249,17 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8888/employees/{{employee_id}}",
-					"protocol": "http",
+					"raw": "{{emp_url}}/employees/{{employee_id}}",
 					"host": [
-						"localhost"
+						"{{emp_url}}"
 					],
-					"port": "8888",
 					"path": [
 						"employees",
 						"{{employee_id}}"
 					]
 				}
 			},
-			"response": [
-				{
-					"name": "500 Internal Server Error (deleted employee)",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8888/employees/{{employee_id}}",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8888",
-							"path": [
-								"employees",
-								"{{employee_id}}"
-							]
-						}
-					},
-					"status": "Internal Server Error",
-					"code": 500,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate"
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache"
-						},
-						{
-							"key": "Expires",
-							"value": "0"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 28 Jul 2021 13:09:39 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"timestamp\": \"2021-07-28T13:09:39.529+00:00\",\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"path\": \"/employees/4\"\n}"
-				}
-			]
+			"response": []
 		}
 	],
 	"auth": {
