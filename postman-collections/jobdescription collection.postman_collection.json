@@ -1,10 +1,112 @@
 {
 	"info": {
-		"_postman_id": "d7f6a140-9ce6-414b-902b-ad6f5fed7144",
-		"name": "employee collection",
+		"_postman_id": "8b498413-666c-42a9-8bc3-cbbc4e8b5a7a",
+		"name": "jobdescription collection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "jobdescritions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{emp_url}}/jobdescriptions",
+					"host": [
+						"{{emp_url}}"
+					],
+					"path": [
+						"jobdescriptions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 Ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/jobdescriptions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"jobdescriptions"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 Jul 2021 09:57:27 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"title\": \"USB\",\n        \"description\": \"SCSI\",\n        \"addedAt\": \"2021-07-29T09:39:38.594\",\n        \"id\": 1\n    },\n    {\n        \"title\": \"SDD\",\n        \"description\": \"COM\",\n        \"addedAt\": \"2021-07-29T09:44:02.569\",\n        \"id\": 2\n    },\n    {\n        \"title\": \"HDD\",\n        \"description\": \"COM\",\n        \"addedAt\": \"2021-07-29T09:48:48.265\",\n        \"id\": 3\n    }\n]"
+				}
+			]
+		},
 		{
 			"name": "new jobdescription",
 			"event": [
@@ -56,12 +158,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8888/jobdescriptions",
-					"protocol": "http",
+					"raw": "{{emp_url}}/jobdescriptions",
 					"host": [
-						"localhost"
+						"{{emp_url}}"
 					],
-					"port": "8888",
 					"path": [
 						"jobdescriptions"
 					]
@@ -138,7 +238,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 29 Jul 2021 09:39:37 GMT"
+							"value": "Thu, 29 Jul 2021 10:04:31 GMT"
 						},
 						{
 							"key": "Keep-Alive",
@@ -150,10 +250,10 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"title\": \"USB\",\n    \"description\": \"SCSI\",\n    \"addedAt\": \"2021-07-29T09:39:38.594\",\n    \"id\": 1\n}"
+					"body": "{\n    \"title\": \"HDD\",\n    \"description\": \"JBOD\",\n    \"addedAt\": \"2021-07-29T10:04:33.032\",\n    \"id\": 4\n}"
 				},
 				{
-					"name": "400 Bad request - body syntax error",
+					"name": "400 Bad Request - incomplete body",
 					"originalRequest": {
 						"method": "POST",
 						"header": [
@@ -165,7 +265,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"{{job_title}}\",\r\n    \"description\": \"{{job_description}}\",\r\n    \"addedAt\": \"{{job_addedAt}}\"\r\n",
+							"raw": "{\r\n    \"title\": \"{{job_title}}\",\r\n    \"addedAt\": \"{{job_addedAt}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -222,7 +322,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 29 Jul 2021 09:40:06 GMT"
+							"value": "Thu, 29 Jul 2021 10:05:27 GMT"
 						},
 						{
 							"key": "Connection",
@@ -230,334 +330,12 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"timestamp\": \"2021-07-29T09:40:06.388+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"path\": \"/jobdescriptions\"\n}"
+					"body": "{\n    \"timestamp\": \"2021-07-29T10:05:27.203+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"path\": \"/jobdescriptions\"\n}"
 				}
 			]
 		},
 		{
-			"name": "new employee",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var jsonData = pm.response.json();\r",
-							"pm.environment.set(\"employee_id\", jsonData.id);\r",
-							"\r",
-							"\r",
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"\r",
-							"\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				},
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							"pm.environment.unset(\"employee_id\");"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"userName\": \"{{emp_userName}}\",\r\n    \"jobDescriptionId\": {{job_description_id}},\r\n    \"firstName\": \"{{emp_firstName}}\",\r\n    \"lastName\": \"{{emp_lastName}}\",\r\n    \"middleName\": \"{{emp_middleName}}\",\r\n    \"emailId\": \"{{emp_emailId}}\",\r\n    \"dayOfBirth\": \"{{emp_dayOfBirth}}\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{emp_url}}/employees",
-					"host": [
-						"{{emp_url}}"
-					],
-					"path": [
-						"employees"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "200 OK",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"userName\": \"{{emp_userName}}\",\r\n    \"jobDescriptionId\": {{job_description_id}},\r\n    \"firstName\": \"{{emp_firstName}}\",\r\n    \"lastName\": \"{{emp_lastName}}\",\r\n    \"middleName\": \"{{emp_middleName}}\",\r\n    \"emailId\": \"{{emp_emailId}}\",\r\n    \"dayOfBirth\": \"{{emp_dayOfBirth}}\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{emp_url}}/employees",
-							"host": [
-								"{{emp_url}}"
-							],
-							"path": [
-								"employees"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate"
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache"
-						},
-						{
-							"key": "Expires",
-							"value": "0"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Thu, 29 Jul 2021 09:44:29 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"id\": 1,\n    \"jobDescription\": {\n        \"title\": \"SDD\",\n        \"description\": \"COM\",\n        \"addedAt\": \"2021-07-29T09:44:02.569\",\n        \"id\": 2\n    },\n    \"userName\": \"Maurice\",\n    \"firstName\": \"Irma\",\n    \"middleName\": \"Rosenbaum\",\n    \"lastName\": \"Buckridge\",\n    \"emailId\": \"Florida@tester.com\",\n    \"dayOfBirth\": \"2021-07-29\"\n}"
-				},
-				{
-					"name": "400 Bad Request - empty body",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{emp_url}}/employees",
-							"host": [
-								"{{emp_url}}"
-							],
-							"path": [
-								"employees"
-							]
-						}
-					},
-					"status": "Bad Request",
-					"code": 400,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate"
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache"
-						},
-						{
-							"key": "Expires",
-							"value": "0"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Thu, 29 Jul 2021 09:45:12 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"timestamp\": \"2021-07-29T09:45:12.108+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"path\": \"/employees\"\n}"
-				}
-			]
-		},
-		{
-			"name": "employees Copy",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{emp_url}}/employees",
-					"host": [
-						"{{emp_url}}"
-					],
-					"path": [
-						"employees"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "200 OK",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{emp_url}}/employees",
-							"host": [
-								"{{emp_url}}"
-							],
-							"path": [
-								"employees"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate"
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache"
-						},
-						{
-							"key": "Expires",
-							"value": "0"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Thu, 29 Jul 2021 09:45:50 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"id\": 1,\n        \"jobDescription\": {\n            \"title\": \"SDD\",\n            \"description\": \"COM\",\n            \"addedAt\": \"2021-07-29T09:44:02.569\",\n            \"id\": 2\n        },\n        \"userName\": \"Maurice\",\n        \"firstName\": \"Irma\",\n        \"middleName\": \"Rosenbaum\",\n        \"lastName\": \"Buckridge\",\n        \"emailId\": \"Florida@tester.com\",\n        \"dayOfBirth\": \"2021-07-29\"\n    }\n]"
-				}
-			]
-		},
-		{
-			"name": "employee/{id}",
+			"name": "jobdescription/{id}",
 			"event": [
 				{
 					"listen": "test",
@@ -576,13 +354,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{emp_url}}/employees/{{employee_id}}",
+					"raw": "{{emp_url}}/jobdescriptions/{{job_description_id}}",
 					"host": [
 						"{{emp_url}}"
 					],
 					"path": [
-						"employees",
-						"{{employee_id}}"
+						"jobdescriptions",
+						"{{job_description_id}}"
 					]
 				}
 			},
@@ -593,13 +371,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{emp_url}}/employees/{{employee_id}}",
+							"raw": "{{emp_url}}/jobdescriptions/{{job_description_id}}",
 							"host": [
 								"{{emp_url}}"
 							],
 							"path": [
-								"employees",
-								"{{employee_id}}"
+								"jobdescriptions",
+								"{{job_description_id}}"
 							]
 						}
 					},
@@ -641,7 +419,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 29 Jul 2021 09:49:33 GMT"
+							"value": "Thu, 29 Jul 2021 10:03:41 GMT"
 						},
 						{
 							"key": "Keep-Alive",
@@ -653,12 +431,12 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"id\": 2,\n    \"jobDescription\": {\n        \"title\": \"HDD\",\n        \"description\": \"COM\",\n        \"addedAt\": \"2021-07-29T09:48:48.265\",\n        \"id\": 3\n    },\n    \"userName\": \"Dina\",\n    \"firstName\": \"Saige\",\n    \"middleName\": \"Bartoletti\",\n    \"lastName\": \"Wyman\",\n    \"emailId\": \"Cielo@tester.com\",\n    \"dayOfBirth\": \"2021-07-29\"\n}"
+					"body": "{\n    \"title\": \"HDD\",\n    \"description\": \"COM\",\n    \"addedAt\": \"2021-07-29T09:48:48.265\",\n    \"id\": 3\n}"
 				}
 			]
 		},
 		{
-			"name": "employee/{id}",
+			"name": "jobdescription/{id}",
 			"event": [
 				{
 					"listen": "test",
@@ -668,9 +446,9 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Middlename change check\", function () {\r",
+							"pm.test(\"Description change check\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.middleName).to.eql(\"Rashid\");\r",
+							"    pm.expect(jsonData.description).to.eql(\"modified\");\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -682,7 +460,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": {{employee_id}},\r\n    \"jobDescriptionId\": {{job_description_id}},\r\n    \"userName\": \"{{emp_lastName}}\",\r\n    \"firstName\": \"{{emp_firstName}}\",\r\n    \"middleName\": \"Rashid\",\r\n    \"lastName\": \"{{emp_lastName}}\",\r\n    \"emailId\": \"{{emp_emailId}}\",\r\n    \"dayOfBirth\": \"{{$isoTimestamp}}\"\r\n}",
+					"raw": "{\r\n  \"title\": \"{{job_title}}\",\r\n  \"description\": \"modified\",\r\n  \"addedAt\": \"{{job_addedAt}}\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -690,13 +468,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{emp_url}}/employees/{{employee_id}}",
+					"raw": "{{emp_url}}/jobdescriptions/{{job_description_id}}",
 					"host": [
 						"{{emp_url}}"
 					],
 					"path": [
-						"employees",
-						"{{employee_id}}"
+						"jobdescriptions",
+						"{{job_description_id}}"
 					]
 				}
 			},
@@ -708,7 +486,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": {{employee_id}},\r\n    \"jobDescriptionId\": {{job_description_id}},\r\n    \"userName\": \"{{emp_lastName}}\",\r\n    \"firstName\": \"{{emp_firstName}}\",\r\n    \"middleName\": \"Rashid\",\r\n    \"lastName\": \"{{emp_lastName}}\",\r\n    \"emailId\": \"{{emp_emailId}}\",\r\n    \"dayOfBirth\": \"{{$isoTimestamp}}\"\r\n}",
+							"raw": "{\r\n  \"title\": \"{{job_title}}\",\r\n  \"description\": \"modified\",\r\n  \"addedAt\": \"{{job_addedAt}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -716,13 +494,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{emp_url}}/employees/{{employee_id}}",
+							"raw": "{{emp_url}}/jobdescriptions/{{job_description_id}}",
 							"host": [
 								"{{emp_url}}"
 							],
 							"path": [
-								"employees",
-								"{{employee_id}}"
+								"jobdescriptions",
+								"{{job_description_id}}"
 							]
 						}
 					},
@@ -764,7 +542,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 29 Jul 2021 09:50:56 GMT"
+							"value": "Thu, 29 Jul 2021 10:13:56 GMT"
 						},
 						{
 							"key": "Keep-Alive",
@@ -776,16 +554,16 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"id\": 2,\n    \"jobDescription\": {\n        \"title\": \"HDD\",\n        \"description\": \"COM\",\n        \"addedAt\": \"2021-07-29T09:48:48.265\",\n        \"id\": 3\n    },\n    \"userName\": \"Padberg\",\n    \"firstName\": \"Brenna\",\n    \"middleName\": \"Rashid\",\n    \"lastName\": \"Jast\",\n    \"emailId\": \"Franco@tester.com\",\n    \"dayOfBirth\": \"2021-07-29\"\n}"
+					"body": "{\n    \"title\": \"CSS\",\n    \"description\": \"modified\",\n    \"addedAt\": \"2021-07-29T10:13:58.195\",\n    \"id\": 5\n}"
 				},
 				{
-					"name": "400 Bad Request - incomplete body content",
+					"name": "400 Bad request - incomplete body",
 					"originalRequest": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": {{employee_id}},\r\n    \"jobDescriptionId\": {{job_description_id}},\r\n    \"userName\": \"{{emp_lastName}}\",\r\n    \"firstName\": \"{{emp_firstName}}\",\r\n    \"middleName\": \"Rashid\",\r\n    \"emailId\": \"{{emp_emailId}}\",\r\n    \"dayOfBirth\": \"{{$isoTimestamp}}\"\r\n}",
+							"raw": "{\r\n    \"title\": \"{{job_title}}\",\r\n    \"description\": \"modified\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -793,13 +571,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{emp_url}}/employees/{{employee_id}}",
+							"raw": "{{emp_url}}/jobdescriptions/{{job_description_id}}",
 							"host": [
 								"{{emp_url}}"
 							],
 							"path": [
-								"employees",
-								"{{employee_id}}"
+								"jobdescriptions",
+								"{{job_description_id}}"
 							]
 						}
 					},
@@ -841,7 +619,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 29 Jul 2021 09:51:56 GMT"
+							"value": "Thu, 29 Jul 2021 10:14:39 GMT"
 						},
 						{
 							"key": "Connection",
@@ -849,12 +627,12 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"timestamp\": \"2021-07-29T09:51:56.677+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"path\": \"/employees/2\"\n}"
+					"body": "{\n    \"timestamp\": \"2021-07-29T10:14:39.966+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"path\": \"/jobdescriptions/5\"\n}"
 				}
 			]
 		},
 		{
-			"name": "employee/{id}",
+			"name": "jobdescription/{id}",
 			"event": [
 				{
 					"listen": "test",
@@ -863,7 +641,6 @@
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"\r",
 							"\r",
 							""
 						],
@@ -875,13 +652,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{emp_url}}/employees/{{employee_id}}",
+					"raw": "{{emp_url}}/jobdescriptions/{{job_description_id}}",
 					"host": [
 						"{{emp_url}}"
 					],
 					"path": [
-						"employees",
-						"{{employee_id}}"
+						"jobdescriptions",
+						"{{job_description_id}}"
 					]
 				}
 			},
@@ -892,13 +669,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{emp_url}}/employees/{{employee_id}}",
+							"raw": "{{emp_url}}/jobdescriptions/{{job_description_id}}",
 							"host": [
 								"{{emp_url}}"
 							],
 							"path": [
-								"employees",
-								"{{employee_id}}"
+								"jobdescriptions",
+								"{{job_description_id}}"
 							]
 						}
 					},
@@ -940,7 +717,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 29 Jul 2021 09:53:22 GMT"
+							"value": "Thu, 29 Jul 2021 10:18:37 GMT"
 						},
 						{
 							"key": "Keep-Alive",
@@ -952,12 +729,12 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"id\": 2,\n    \"jobDescription\": {\n        \"title\": \"HDD\",\n        \"description\": \"COM\",\n        \"addedAt\": \"2021-07-29T09:48:48.265\",\n        \"id\": 3\n    },\n    \"userName\": \"Padberg\",\n    \"firstName\": \"Brenna\",\n    \"middleName\": \"Rashid\",\n    \"lastName\": \"Jast\",\n    \"emailId\": \"Franco@tester.com\",\n    \"dayOfBirth\": \"2021-07-29\"\n}"
+					"body": "{\n    \"title\": \"THX\",\n    \"description\": \"modified\",\n    \"addedAt\": \"2021-07-29T10:17:36.689\",\n    \"id\": 5\n}"
 				}
 			]
 		},
 		{
-			"name": "employee/{id}",
+			"name": "jobdescription/{id}",
 			"event": [
 				{
 					"listen": "test",
@@ -976,13 +753,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{emp_url}}/employees/{{employee_id}}",
+					"raw": "{{emp_url}}/jobdescriptions/{{job_description_id}}",
 					"host": [
 						"{{emp_url}}"
 					],
 					"path": [
-						"employees",
-						"{{employee_id}}"
+						"jobdescriptions",
+						"{{job_description_id}}"
 					]
 				}
 			},
@@ -993,13 +770,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{emp_url}}/employees/{{employee_id}}",
+							"raw": "{{emp_url}}/jobdescriptions/{{job_description_id}}",
 							"host": [
 								"{{emp_url}}"
 							],
 							"path": [
-								"employees",
-								"{{employee_id}}"
+								"jobdescriptions",
+								"{{job_description_id}}"
 							]
 						}
 					},
@@ -1037,7 +814,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 29 Jul 2021 09:54:13 GMT"
+							"value": "Thu, 29 Jul 2021 10:20:01 GMT"
 						},
 						{
 							"key": "Keep-Alive",
@@ -1054,7 +831,7 @@
 			]
 		},
 		{
-			"name": "employee/{id}",
+			"name": "jobdescription/{id}",
 			"event": [
 				{
 					"listen": "test",
@@ -1072,13 +849,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{emp_url}}/employees/{{employee_id}}",
+					"raw": "{{emp_url}}/jobdescriptions/{{job_description_id}}",
 					"host": [
 						"{{emp_url}}"
 					],
 					"path": [
-						"employees",
-						"{{employee_id}}"
+						"jobdescriptions",
+						"{{job_description_id}}"
 					]
 				}
 			},
@@ -1089,13 +866,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{emp_url}}/employees/{{employee_id}}",
+							"raw": "{{emp_url}}/jobdescriptions/{{job_description_id}}",
 							"host": [
 								"{{emp_url}}"
 							],
 							"path": [
-								"employees",
-								"{{employee_id}}"
+								"jobdescriptions",
+								"{{job_description_id}}"
 							]
 						}
 					},
@@ -1137,7 +914,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 29 Jul 2021 09:55:44 GMT"
+							"value": "Thu, 29 Jul 2021 10:21:44 GMT"
 						},
 						{
 							"key": "Connection",
@@ -1145,12 +922,12 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"timestamp\": \"2021-07-29T09:55:44.165+00:00\",\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"path\": \"/employees/2\"\n}"
+					"body": "{\n    \"timestamp\": \"2021-07-29T10:21:44.099+00:00\",\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"path\": \"/jobdescriptions/5\"\n}"
 				}
 			]
 		},
 		{
-			"name": "employees",
+			"name": "jobdescritions",
 			"event": [
 				{
 					"listen": "test",
@@ -1170,28 +947,28 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{emp_url}}/employees",
+					"raw": "{{emp_url}}/jobdescriptions",
 					"host": [
 						"{{emp_url}}"
 					],
 					"path": [
-						"employees"
+						"jobdescriptions"
 					]
 				}
 			},
 			"response": [
 				{
-					"name": "200 OK - clear",
+					"name": "200 OK - clean",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{emp_url}}/employees",
+							"raw": "{{emp_url}}/jobdescriptions",
 							"host": [
 								"{{emp_url}}"
 							],
 							"path": [
-								"employees"
+								"jobdescriptions"
 							]
 						}
 					},
@@ -1233,7 +1010,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 29 Jul 2021 10:34:56 GMT"
+							"value": "Thu, 29 Jul 2021 10:27:38 GMT"
 						},
 						{
 							"key": "Keep-Alive",
