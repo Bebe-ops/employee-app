@@ -51,12 +51,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8888/jobdescriptions",
-					"protocol": "http",
+					"raw": "{{emp_url}}/jobdescriptions",
 					"host": [
-						"localhost"
+						"{{emp_url}}"
 					],
-					"port": "8888",
 					"path": [
 						"jobdescriptions"
 					]
@@ -118,12 +116,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8888/jobdescriptions",
-					"protocol": "http",
+					"raw": "{{emp_url}}/jobdescriptions",
 					"host": [
-						"localhost"
+						"{{emp_url}}"
 					],
-					"port": "8888",
 					"path": [
 						"jobdescriptions"
 					]
